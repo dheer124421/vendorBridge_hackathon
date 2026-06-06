@@ -1,0 +1,335 @@
+.rfq-details-layout {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.rfq-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .rfq-spec-grid {
+    grid-template-columns: 2.2fr 1fr;
+  }
+}
+
+.rfq-info-column, .rfq-actions-column {
+  padding: 32px 24px;
+}
+
+.rfq-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 580px) {
+  .rfq-title-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.rfq-title-row h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+}
+
+.rfq-desc-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.rfq-meta-items {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 28px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.meta-item strong {
+  color: white;
+}
+
+.rfq-items-table-box h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Actions Sidebar */
+.vendor-actions-box h3, .officer-actions-box h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.my-quotation-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.my-quote-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.my-quote-items {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quote-item-summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.quote-item-summary-line.total {
+  padding-top: 12px;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.quote-item-summary-line.total strong {
+  color: var(--color-primary);
+}
+
+.border-t {
+  border-top: 1px solid var(--border-color);
+}
+
+.no-quote-prompt p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.assigned-vendors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.assigned-vendor-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.vendor-row-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-mini {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-primary-glow);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.vendor-name-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  display: block;
+}
+
+.vendor-email-subtitle {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+/* Screen 7 Sketched Comparison Matrix Board */
+.quotation-comparison-section {
+  padding: 32px 24px;
+}
+
+.comparison-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.comparison-header h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.subtitle-comparison {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.sketched-comparison-matrix-board {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comparison-matrix-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(140px, 1fr);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.criteria-column-sketched, .vendor-column-sketched {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-color);
+}
+
+.criteria-column-sketched {
+  background: rgba(255, 255, 255, 0.02);
+  min-width: 140px;
+}
+
+.vendor-column-sketched:last-child {
+  border-right: none;
+}
+
+/* Green highlight for lowest quote columns */
+.vendor-column-sketched.highlight-lowest-green {
+  background: var(--color-success-glow);
+  border-left: 2px solid var(--color-success);
+  border-right: 2px solid var(--color-success);
+  z-index: 5;
+}
+
+.matrix-cell {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.matrix-cell:last-child {
+  border-bottom: none;
+}
+
+.criteria-column-sketched .matrix-cell {
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.75rem;
+}
+
+.matrix-cell.header-cell {
+  height: 70px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.vendor-column-sketched.highlight-lowest-green .matrix-cell.header-cell {
+  background: rgba(16, 185, 129, 0.25);
+  color: white;
+}
+
+.lowest-capsule-lbl {
+  font-size: 0.7rem;
+  color: var(--color-success);
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.matrix-cell.val-cell {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.matrix-cell.button-cell {
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+}
+
+.matrix-label-info {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.matrix-label-closed {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-danger);
+}
+
+/* Caption text in red matching Screen 7 drawings */
+.caption-text-sketched {
+  margin-top: 8px;
+}
+
+.caption-text-sketched p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-danger);
+  font-style: italic;
+}
+.no-data {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 20px 0;
+}

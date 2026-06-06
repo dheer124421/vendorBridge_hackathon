@@ -1,0 +1,230 @@
+.dashboard-scrollable {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.dashboard-intro-greeting h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.dashboard-intro-greeting p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Four Mockup Cards Grid Layout */
+.visual-dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.visual-stat-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  border-radius: var(--border-radius);
+  height: 140px;
+}
+
+.visual-card-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.visual-card-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Middle Layout Split Grid */
+.dashboard-visual-middle-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-visual-middle-grid {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+.visual-table-card, .visual-chart-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 340px;
+}
+
+.visual-card-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.visual-po-table td {
+  padding: 18px 20px !important;
+}
+
+/* Multi SVG Graphs style columns */
+.multi-graphs-display {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+}
+
+.graph-row-flex {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.mini-pie-box {
+  width: 60px;
+  height: 60px;
+}
+
+.pie-svg {
+  transform: rotate(-90deg);
+}
+
+.pie-legend-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.legend-item .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-item .dot.bg-primary { background-color: var(--color-primary); }
+.legend-item .dot.bg-success { background-color: var(--color-success); }
+.legend-item .dot.bg-gray { background-color: #6b7280; }
+
+.mini-line-graph-box {
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 10px 0;
+}
+
+.bar-charts-mini-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 80px;
+  padding: 0 10px;
+}
+
+.mini-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.bar-visual {
+  width: 14px;
+  border-radius: 3px 3px 0 0;
+  transition: height 0.5s ease;
+}
+
+.mini-bar-item span {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Bottom Actions Pill Buttons */
+.visual-bottom-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border-color);
+  padding-top: 24px;
+  margin-top: 8px;
+}
+
+.action-btn-custom {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn-custom:hover {
+  background: var(--color-primary-glow);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 16px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  border-top-color: var(--color-primary);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.no-data {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 20px 0;
+}

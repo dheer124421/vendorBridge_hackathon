@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Color Palette - Premium Futuristic Dark Theme */
+  --bg-main: #0B0F19;
+  --bg-card: rgba(20, 27, 45, 0.7);
+  --bg-card-hover: rgba(28, 37, 60, 0.85);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(99, 102, 241, 0.2);
+  
+  --text-main: #F3F4F6;
+  --text-muted: #9CA3AF;
+  --text-dark: #1F2937;
+  
+  /* Accent Colors */
+  --color-primary: #6366F1;
+  --color-primary-glow: rgba(99, 102, 241, 0.4);
+  --color-secondary: #EC4899;
+  
+  /* Status Colors */
+  --color-success: #10B981;
+  --color-success-glow: rgba(16, 185, 129, 0.15);
+  --color-warning: #F59E0B;
+  --color-warning-glow: rgba(245, 158, 11, 0.15);
+  --color-danger: #EF4444;
+  --color-danger-glow: rgba(239, 68, 68, 0.15);
+  --color-info: #3B82F6;
+  --color-info-glow: rgba(59, 130, 246, 0.15);
+  --color-gold: #EAB308;
+  --color-gold-glow: rgba(234, 179, 8, 0.15);
+
+  --sidebar-width: 260px;
+  --transition-speed: 0.3s;
+  --border-radius: 16px;
+  --box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --backdrop-filter: blur(12px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background Gradients */
+.bg-gradient-glow {
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.04) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: var(--backdrop-filter);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.1);
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-input, .form-select, .form-textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-main);
+  padding: 12px 16px;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  transition: all var(--transition-speed) ease;
+  outline: none;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-glow);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.form-select option {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4f46e5 100%);
+  color: white;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+}
+
+.btn-primary:disabled {
+  background: #374151;
+  color: #9CA3AF;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--color-danger) 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.45);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--color-success) 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+}
+
+.btn-success:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-success {
+  background-color: var(--color-success-glow);
+  color: var(--color-success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-warning {
+  background-color: var(--color-warning-glow);
+  color: var(--color-warning);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-danger {
+  background-color: var(--color-danger-glow);
+  color: var(--color-danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-info {
+  background-color: var(--color-info-glow);
+  color: var(--color-info);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge-gold {
+  background-color: var(--color-gold-glow);
+  color: var(--color-gold);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+/* Layout Containers */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 32px;
+  min-height: 100vh;
+  transition: margin-left var(--transition-speed) ease;
+}
+
+.main-content.full-width {
+  margin-left: 0;
+  padding: 0;
+}
+
+/* Typography Utility */
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  background: linear-gradient(to right, #ffffff, #9ca3af);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: -16px;
+  margin-bottom: 32px;
+}
+
+/* Tables */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.custom-table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+.custom-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Print CSS Styles - Hides layout sidebar/header and formats invoices for print */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  .main-content {
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .glass-panel {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+}
+
+.main-content-layout-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevent layout items from breaking flex dimensions */
+}
+
+.main-content-layout-wrapper.full-width {
+  margin-left: 0;
+}
+
+.app-main-root-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
